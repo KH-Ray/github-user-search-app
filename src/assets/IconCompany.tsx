@@ -1,6 +1,9 @@
-import React from 'react';
+import { SVGProps } from "react";
+import { JSX } from "react/jsx-runtime";
 
-export default function IconCompany(props) {
+export default function IconCompany(
+  props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>,
+) {
   return (
     <svg height={20} width={20} xmlns="http://www.w3.org/2000/svg" {...props}>
       <g fill="#4b6a9b">

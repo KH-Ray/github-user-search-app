@@ -1,34 +1,57 @@
-import { useEffect, useState } from "react";
-import IconMoon from "./assets/IconMoon";
-import IconSun from "./assets/IconSun";
-import classNames from "./utils/classNames";
-import IconSearch from "./assets/IconSearch";
-import { getGithubAccount } from "./services/githubAccount";
-import { GithubAccount } from "./utils/types";
-import { ThreeDots } from "react-loader-spinner";
-import IconLocation from "./assets/IconLocation";
-import IconWebsite from "./assets/IconWebsite";
-import IconTwitter from "./assets/IconTwitter";
+# Frontend Mentor - GitHub user search app solution
 
-const checkAvailability = (darkMode: boolean, params: string) => {
-  if (!params) {
-    return (
-      <p className="text-sm text-gray-blue/50 sm:text-base">Not available</p>
-    );
-  }
+This is a solution to the [GitHub user search app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/github-user-search-app-Q09YOgaH6). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-  return (
-    <p
-      className={classNames(
-        darkMode ? "text-white" : "text-gray-blue",
-        "text-sm sm:text-base",
-      )}
-    >
-      {params}
-    </p>
-  );
-};
+## Table of contents
 
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+- [Author](#author)
+
+**Note: Delete this note and update the table of contents based on what sections you keep.**
+
+## Overview
+
+### The challenge
+
+Users should be able to:
+
+- View the optimal layout for the app depending on their device's screen size
+- See hover states for all interactive elements on the page
+- Search for GitHub users by their username
+- See relevant user information based on their search
+- Switch between light and dark themes
+- **Bonus**: Have the correct color scheme chosen for them based on their computer preferences. _Hint_: Research `prefers-color-scheme` in CSS.
+
+### Screenshot
+
+![](github-user-search-app.png)
+
+### Links
+
+- Solution URL: [https://github.com/KH-Ray/github-user-search-app](https://github.com/KH-Ray/github-user-search-app)
+- Live Site URL: [https://delightful-frangipane-6eb1ff.netlify.app/](https://delightful-frangipane-6eb1ff.netlify.app/)
+
+## My process
+
+### Built with
+
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- CSS Grid
+- [React](https://reactjs.org/) - JS library
+- [tailwindcss](https://tailwindcss.com/) - A utility-first CSS framework
+- [Typescript](https://www.typescriptlang.org/) - A free and open-source high-level programming language
+
+### What I learned
+
+```js
 const App = (): JSX.Element => {
   const [darkMode, setDarkMode] = useState(false);
   const [searchUsername, setSearchUsername] = useState("octocat");
@@ -326,5 +349,8 @@ const App = (): JSX.Element => {
     </main>
   );
 };
+```
 
-export default App;
+## Author
+
+- Frontend Mentor - [@KH-Ray](https://www.frontendmentor.io/profile/KH-Ray)
