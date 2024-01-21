@@ -86,7 +86,7 @@ const App = (): JSX.Element => {
       )}
     >
       <div className="mx-auto flex h-full w-11/12 max-w-3xl flex-col items-center justify-center gap-4">
-        <div className="text-dark-black flex w-full justify-between">
+        <div className="flex w-full justify-between text-dark-black">
           <h1
             className={classNames(
               darkMode ? "text-white" : "text-black",
@@ -105,9 +105,9 @@ const App = (): JSX.Element => {
                 <IconSun className="h-5 w-5 fill-white group-hover:fill-gray-blue" />
               </div>
             ) : (
-              <div className="hover:text-dark-black group flex items-center gap-4 hover:cursor-pointer">
+              <div className="group flex items-center gap-4 hover:cursor-pointer hover:text-dark-black">
                 DARK{" "}
-                <IconMoon className="group-hover:fill-dark-black h-5 w-5 fill-gray-blue" />
+                <IconMoon className="h-5 w-5 fill-gray-blue group-hover:fill-dark-black" />
               </div>
             )}
           </button>
@@ -182,7 +182,7 @@ const App = (): JSX.Element => {
                 alt={`${fecthUsername.name}'s profile picture`}
                 className="h-20 w-20 rounded-full sm:h-28 sm:w-28 md:hidden"
               />
-              <div className="flex h-full flex-col justify-evenly">
+              <div className="flex h-full flex-col justify-evenly md:mr-auto">
                 <p
                   className={classNames(
                     darkMode ? "text-white" : "text-black",
@@ -197,12 +197,20 @@ const App = (): JSX.Element => {
                 <p
                   className={classNames(
                     darkMode ? "text-white" : "text-light-gray",
-                    "text-sm sm:text-base",
+                    "text-sm sm:text-base md:hidden",
                   )}
                 >
                   Joined {formattedDate}
                 </p>
               </div>
+              <p
+                className={classNames(
+                  darkMode ? "text-white" : "text-light-gray",
+                  "hidden self-start text-sm sm:text-base md:block",
+                )}
+              >
+                Joined {formattedDate}
+              </p>
             </div>
 
             <div
@@ -211,8 +219,7 @@ const App = (): JSX.Element => {
                 "text-sm leading-6 sm:text-base",
               )}
             >
-              {fecthUsername.bio ||
-                "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros."}
+              {fecthUsername.bio || "This profile has no bio"}
             </div>
 
             <div
